@@ -5,23 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Pinky</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             background-color: #ffccff;
             text-align: center;
-            overflow: hidden;
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            overflow-x: hidden;
+            padding: 20px;
         }
 
         .container {
             position: relative;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            z-index: 10;
+            padding-top: 60px;
         }
 
         h1 {
@@ -29,6 +34,7 @@
             color: #ff007f;
             opacity: 0;
             animation: popUp 2s forwards;
+            margin-bottom: 10px;
         }
 
         p {
@@ -36,7 +42,7 @@
             color: #333;
             opacity: 0;
             animation: popUp 3s forwards;
-            max-width: 80%;
+            max-width: 90%;
         }
 
         .author {
@@ -45,25 +51,21 @@
             color: #660033;
             opacity: 0;
             animation: popUp 4s forwards;
+            margin-top: 10px;
         }
 
         .poetry {
-            margin-top: 20px;
+            margin-top: 30px;
             font-size: 18px;
-            font-weight: bold;
+            font-style: italic;
             color: #444;
-            opacity: 0;
-            animation: popUp 5s forwards;
+            max-width: 90%;
             text-align: center;
-            max-width: 80%;
-        }
-
-        .poetry p {
-            margin: 5px 0;
+            line-height: 1.5;
         }
 
         @keyframes popUp {
-            0% { opacity: 0; transform: scale(0.8); }
+            0% { opacity: 0; transform: scale(0.5); }
             100% { opacity: 1; transform: scale(1); }
         }
 
@@ -75,8 +77,7 @@
             border-radius: 50%;
             position: absolute;
             bottom: -100px;
-            animation: floatUp 6s infinite ease-in-out;
-            z-index: 1;
+            animation: floatUp 5s infinite ease-in-out;
         }
 
         @keyframes floatUp {
@@ -92,18 +93,30 @@
             position: absolute;
             top: -10px;
             animation: fallDown 4s infinite linear;
-            z-index: 1;
         }
 
         @keyframes fallDown {
             0% { transform: translateY(0); opacity: 1; }
             100% { transform: translateY(100vh); opacity: 0; }
         }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 40px;
+            }
+            p, .poetry {
+                font-size: 16px;
+            }
+            .author {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🎂 Happy Birthday Pinky 🎉</h1>
+        <h1> Happy Birthday Pinky 🎂🍭</h1>
         <p>May this special day bring you endless happiness, laughter, and beautiful memories.  
             You are an amazing person, and you deserve all the love and joy in the world. 
             May your life always be filled with success, peace, and countless blessings.</p>
@@ -113,13 +126,13 @@
             <p>"Adhuri chahte meri"</p>
             <p>"Adhuri Dastan meri"</p>
             <p>"Mere jazbe adhure Hain"</p>
-            <p>"Meri khwahish ke piamane adhure Hain"</p>
+            <p>"Meri khwahish ke paimane adhure Hain"</p>
             <p>"Mohabbat ke hothon pe afsane adhure Hain"</p>
             <p>"Adhurepan ki duniya mere Charon taraf hai"</p>
-            <p>"Phir bhi apne dil ki sab gehraiyon ke sath"</p>
+            <p>"Phir bhi Apne dil ki sab gehraiyon ke sath"</p>
             <p>"Sab sachaiyon ke sath"</p>
             <p>"Main ikrar karta hun"</p>
-            <p>"Main tumse pyar karta hun"</p>
+            <p>"Main tumse pyar Karta hun"</p>
         </div>
     </div>
 
@@ -132,7 +145,7 @@
             balloon.style.backgroundColor = ["red", "blue", "green", "yellow", "pink"][Math.floor(Math.random() * 5)];
             balloon.style.left = Math.random() * window.innerWidth + "px";
             balloon.style.animationDuration = (Math.random() * 3 + 3) + "s";
-            setTimeout(() => balloon.remove(), 6000);
+            setTimeout(() => balloon.remove(), 5000);
         }
 
         // Confetti generate karna
@@ -142,13 +155,13 @@
             document.body.appendChild(confetti);
             confetti.style.backgroundColor = ["gold", "silver", "red", "blue", "green"][Math.floor(Math.random() * 5)];
             confetti.style.left = Math.random() * window.innerWidth + "px";
-            confetti.style.animationDuration = (Math.random() * 2 + 3) + "s";
-            setTimeout(() => confetti.remove(), 5000);
+            confetti.style.animationDuration = (Math.random() * 2 + 2) + "s";
+            setTimeout(() => confetti.remove(), 4000);
         }
 
         // Har second balloons aur confetti generate honge
-        setInterval(createBalloon, 700);
-        setInterval(createConfetti, 300);
+        setInterval(createBalloon, 500);
+        setInterval(createConfetti, 200);
     </script>
 </body>
 </html>
